@@ -173,6 +173,7 @@ public class ImageCropperDelegate implements PluginRegistry.ActivityResultListen
         Boolean showCropGrid = call.argument("android.show_crop_grid");
         Boolean lockAspectRatio = call.argument("android.lock_aspect_ratio");
         Boolean hideBottomControls = call.argument("android.hide_bottom_controls");
+        Boolean showCustomizeView = call.argument("android.show_customize_view");
 
         if (title != null) {
             options.setToolbarTitle(title);
@@ -229,6 +230,9 @@ public class ImageCropperDelegate implements PluginRegistry.ActivityResultListen
         }
         if (hideBottomControls != null) {
             options.setHideBottomControls(hideBottomControls);
+        }
+        if (showCustomizeView != null) {
+            options.showCustomizeView(showCustomizeView);
         }
 
         return options;
